@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DNA SNAKE</title>
+		<link rel="stylesheet" type="text/css" href="snakestylesheet.css" />
+		<script src="snake.js" type="text/javascript"></script>
+		<script src="translate.js" type="text/javascript"></script>
+		<!-- <script src="leader.js" type="text/javascript"></script> -->
+		<link rel="shortcut icon" href="images/icon.ico" />
+		<!-- Start VideoLightBox.com HEAD section -->
+		<link rel="stylesheet" href="tutorial/tutorial/index_videolb/videolightbox.css" type="text/css" />
+		
+			<link rel="stylesheet" type="text/css" href="tutorial/tutorial/index_videolb/overlay-minimal.css"/>
+			<script src="tutorial/tutorial/index_videolb/jquery.js" type="text/javascript"></script>
+			<script src="tutorial/tutorial/index_videolb/swfobject.js" type="text/javascript"></script>
+			
+		<!-- <link rel="stylesheet" href="tutorial/tutorial_2/index_videolb/videoligh<!-- tbox.css" type="text/css" />
+		
+			<link rel="stylesheet" type="text/css" href="tutorial/tutorial_2/index_videolb/overlay-minimal.css"/>
+			<script src="tutorial/tutorial_2/index_videolb/jquery.js" type="text/javascript"></script>
+			<script src="tutorial/tutorial_2/index_videolb/swfobject.js" type="text/javascript"></script> -->
+		<!-- End VideoLightBox.com HEAD section -->
+	</head>
+	
+	<body>
+	<button id="cmd_lang" onclick="changeLang(this)"  class="buttonLang" type="button">Cymraeg</button>
+	<div id="parent">
+	<div id="Canvas2">
+	<table  style="width:175px;">
+		<tr>
+			<td  colspan="3"><label id="leader1" style="font-weight:bold; font-size: 18px;">Level 1 Leader Board</label></td>
+		</tr>
+		<tr>
+			<td id="first_1" style="text-align: left;" >1st</td>
+			<td style="text-align: left;" ><label id="1_name" ></label></td> 
+			<td><label id="1_score"></label></td>
+		</tr>
+		<tr>
+			<td id="second_1" style="text-align: left;" >2nd</td>
+			<td style="text-align: left;" ><label id="2_name" ></td> 
+			<td><label id="2_score" ></td>
+		</tr>
+		<tr>
+			<td id="third_1" style="text-align: left;" >3rd</td>
+			<td style="text-align: left;" ><label id="3_name" ></td> 
+			<td><label id="3_score" ></td>
+		</tr>
+		<tr>
+			<td id="fourth_1" style="text-align: left;" >4th</td>
+			<td style="text-align: left;" ><label id="4_name" ></td> 
+			<td><label id="4_score" ></td>
+		</tr>
+		<tr>
+			<td id="fifth_1" style="text-align: left;" >5th</td>
+			<td style="text-align: left;" ><label id="5_name" ></td> 
+			<td><label id="5_score" ></td>
+		</tr>
+		<tr>
+			<td id="sisth_1" style="text-align: left;" >6th</td>
+			<td style="text-align: left;" ><label id="6_name" ></td> 
+			<td><label id="6_score" ></td>
+		</tr>
+		<tr>
+			<td id="seventh_1" style="text-align: left;" >7th</td>
+			<td style="text-align: left;" ><label id="7_name" ></td> 
+			<td><label id="7_score" ></td>
+		</tr>
+		<tr>
+			<td id="eighth_1" style="text-align: left;" >8th</td>
+			<td style="text-align: left;" ><label id="8_name" ></td> 
+			<td><label id="8_score" ></td>
+		</tr>
+		<tr>
+			<td id="ninth_1" style="text-align: left;" >9th</td>
+			<td style="text-align: left;" ><label id="9_name" ></td> 
+			<td><label id="9_score" ></td>
+		</tr>
+		<tr>
+			<td id="tenth_1" style="text-align: left;" >10th</td>
+			<td style="text-align: left;" ><label id="10_name" ></td> 
+			<td><label id="10_score" ></td>
+		</tr>
+		<tr>
+			<td  colspan="3"><label style="font-weight:bold; font-size: 24px; height:20px;"></label></td>
+		</tr>
+		<tr>
+			<td  colspan="3"><label style="font-weight:bold; font-size: 24px; height:20px;"></label></td>
+		</tr>
+		<tr>
+			<td  colspan="3"><label style="font-weight:bold; font-size: 24px; height:20px;"></label></td>
+		</tr>
+	<!-- </table>
+		< table style="width:15%; margin-left:30px; margin-right:30px; margin-top:50px;">-->
+		<tr>
+			<td  colspan="3"><label id="leader2" style="font-weight:bold; font-size: 18px;">Level 2 Leader Board</label></td>
+		</tr>
+		<tr>
+			<td id="first_2" style="text-align: left;" >1st</td>
+			<td style="text-align: left;" ><label id="2_1_name" ></td> 
+			<td><label id="2_1_score" ></td>
+		</tr>
+		<tr>
+			<td id="second_2" style="text-align: left;" >2nd</td>
+			<td style="text-align: left;" ><label id="2_2_name" ></td> 
+			<td><label id="2_2_score" ></td>
+		</tr>
+		<tr>
+			<td id="third_2" style="text-align: left;" >3rd</td>
+			<td style="text-align: left;" ><label id="2_3_name" ></td> 
+			<td><label id="2_3_score" ></td>
+		</tr>
+		<tr>
+			<td id="fourth_2" style="text-align: left;" >4th</td>
+			<td style="text-align: left;" ><label id="2_4_name" ></td> 
+			<td><label id="2_4_score" ></td>
+		</tr>
+		<tr>
+			<td id="fifth_2" style="text-align: left;" >5th</td>
+			<td style="text-align: left;" ><label id="2_5_name" ></td> 
+			<td><label id="2_5_score" ></td>
+		</tr>
+		<tr>
+			<td id="sixth_2" style="text-align: left;" >6th</td>
+			<td style="text-align: left;" ><label id="2_6_name" ></td> 
+			<td><label id="2_6_score" ></td>
+		</tr>
+		<tr>
+			<td id="seventh_2" style="text-align: left;" >7th</td>
+			<td style="text-align: left;" ><label id="2_7_name" ></td> 
+			<td><label id="2_7_score" ></td>
+		</tr>
+		<tr>
+			<td id="eighth_2" style="text-align: left;" >8th</td>
+			<td style="text-align: left;" ><label id="2_8_name" ></td> 
+			<td><label id="2_8_score" ></td>
+		</tr>
+		<tr>
+			<td id="ninth_2" style="text-align: left;" >9th</td>
+			<td style="text-align: left;" ><label id="2_9_name" ></td> 
+			<td><label id="2_9_score" ></td>
+		</tr>
+		<tr>
+			<td id="tenth_2" style="text-align: left;" >10th</td>
+			<td style="text-align: left;" ><label id="2_10_name" ></td> 
+			<td><label id="2_10_score" ></td>
+		</tr>
+	</table>
+	</div>
+	<div id="Canvas1">
+	<img src="images/DNA_SNAKE.png" id="Title" alt="Title" style="width:400px;height:50px;">
+	<canvas id="canvas1" width="900" height="500"></canvas>
+	<img src="images/A7.png" id="A" class="A" style="width:25px;height:25px;">
+	<img src="images/bond.png" id="bond" class="bond" style="width:75px;height:120px;">
+	<img src="images/T7.png" id="T" class="T" style="width:25px;height:25px;">
+	<img src="images/U7.png" id="U" class="U" style="width:25px;height:25px;">
+	<img src="images/C7.png" id="C" class="C" style="width:25px;height:25px;">
+	<img src="images/triple.png" id="triple" class="triple" style="width:75px;height:120px;">
+	<img src="images/G7.png" id="G" class="G" style="width:25px;height:25px;">
+	<label id="main_menu" class="main" type="label">MAIN MENU</label>
+	<label id="DNA_r" class="DNA_r" type="label">DNA REPLICATION</label>
+	<label id="protein_s" class="protein_s" type="label">PROTEIN SYNTHESIS</label>
+	<button  id="skip"  class="skip" type="button" >Go to menu</button>
+	
+	
+	<!-- <video width="320" height="240" controls>
+	<source src="tutorial/Tutorial_1_finished.mp4" type="video/mp4">
+	</video>
+	<video width="320" height="240" controls>
+	<source src="tutorial/Tutorial_2_finished.mp4" type="video/mp4">
+	</video> -->
+	<label id="start_p" class="start_p" type="label">Start Practice</label>
+	<label id="press_s" class="press_s" type="label">Press Space</label>
+	<label id="take_t" class="take_t" type="label">Take Test</label>
+	<label id="press_t" class="press_t" type="label">Press T</label>
+	<label id="how_play" class="how_play" type="label">Learn More</label>
+	<label id="press_h" class="press_h" type="label">Press L</label>
+	<label id="over" class="over" type="label">Game Over!</label>
+	<label id="start_p_over" class="start_p_over" type="label">Start Practice</label>
+	<label id="press_s_over" class="press_s_over" type="label">Press Space</label>
+	<label id="take_t_over" class="take_t_over" type="label">Take Test</label>
+	<label id="press_t_over" class="press_t_over" type="label">Press T</label>
+	<label id="over_leader" class="over_leader" type="label">You're on the Leader Board!</label>
+	<label id="enter3" class="enter3" type="label">Enter a 3 character name</label>
+	<label id="press_e" class="press_e" type="label">Press enter to complete</label>
+	<label id="lvl_one" class="lvl_one" type="label">Level One</label>
+	<label id="lvl_two" class="lvl_two" type="label">Level Two</label>
+	<button  id="r_menu"  class="buttonReplication" type="button">DNA Replication</button>
+	<button  id="s_menu"  class="buttonSynthesis" type="button">Protein Synthesis</button>
+	<button  id="m_menu"  class="buttonmenu" type="button" onclick="change_menu()">Menu</button>
+	<button  id="clear_leader"  class="clear" type="button" onclick="clear_board">Clear Leader board</button>
+	<label id="score" class="score" type="label">Score: </label>
+	<label id="reminder" class="reminder" type="label">Remember: </label>
+	<button  id="speedminus"  class="speedminus" type="button" onclick="change_speed(minus)">-</button>
+	<button id="speed" class="speed" >Fast</button>
+	<button  id="speedplus"  class="speedplus" type="button" onclick="change_speed(plus)">+</button>
+	<input class="playerText" type="text" pattern="[A-Za-z]{3}" id="player" name="player_name" maxlength="3"/>
+	<label id="how_to" class="how_to" type="label">Learn More</label>
+	<p id="para_1" class="para_1">The human body is constantly duplicating cells, to do this it must take information from the original cell.
+		This information is the <b>DNA of the cell</b>, since DNA has two strands, the new cell takes one of those strands.
+		It then uses the <b>bases</b> of the DNA to create the second stand. </p>
+	<p id="para_4" class="para_4">When these bases are collected in the <b>correct order</b> the DNA becomes double stranded and the new cell is formed.</p>
+	<p id="para_2" class="para_2"> These bases are <b>A, T, C and G</b>. It is important to remember that <b>A and T</b> go together, as do <b>G and C</b>. 
+		A and T have a single bone where C and G have a double bond.</p>
+	<p id="para_3" class="para_3">Using the <b>arrow keys</b>  you must collect the correct base on the left which corresponds to the one on the right, 
+	starting from the top. Collecting the correct one will win you 5 points, the wrong one will lose you 5. </p>
+	<p id="para_5" class="para_5">Level Two is based on a process called <b>Central Dogma</b>, this is how Proteins are made.
+	The first part of this process is <b>Transcription</b>, this turns <b>DNA into RNA</b>. RNA uses the same bases as DNA 
+	expept <b>T turns into U</b>.</p>
+	<p id="para_6" class="para_6">The next part is <b>Translation</b>, the RNA is passed through a <b>Ribosome</b> three bases at a time.
+	It reads the three bases and matches them with the corresponding bases. When the entire RNA is matched, the <b>Protein is created</b>.</p>
+	<p id="para_7" class="para_7">Using the arrow keys, <b>collect the correct 3 bases</b> which match the RNA going through the Ribosome.
+	In the practice the correct bases will light up and the incorrect ones will be black. 
+	In the test all bases will be black and <b>you must work out</b> which is correct.</p>
+	<p id="start" class="start">Start</p>
+	<p id="collect" class="collect">Collect</p>
+	<p id="next" class="next">Next</p>
+	<p id="a_collect" class="a_collect">Already Collected</p>
+	
+
+</div>	
+	<div id="Canvas2">
+	<label id="play_vid" style="font-weight:bold; font-size: 29px; padding-top: 15px; " type="label">How to play</label>
+	<div  style="margin-top:60px;">
+	<label id="play_1" style="font-weight:bold; font-size: 18px;" type="label">Level One</label>
+		<!-- Start VideoLightBox.com BODY section -->
+	<!-- <div class="tutorial"> -->
+		<div class="videogallery" style="margin-bottom: 70px;" >
+	<a id="tutorial_1" class="voverlay">
+	<img id="tutorial_1_image" /><span></span></a>
+	<!-- <p><span class="videolb"><a href="http://videolightbox.com">video embed code</a> by VideoLightBox.com v3.1</span></p> -->
+	</div>
+	<!-- </div> -->
+	<script src="tutorial/tutorial/index_videolb/jquery.tools.min.js" type="text/javascript"></script>
+	<script src="tutorial/tutorial/index_videolb/videolightbox.js" type="text/javascript"></script>
+	<p></p>
+	<label id="play_2" style="font-weight:bold; font-size: 18px; padding-top: 15px; margin-top: 500px; top:500px;" type="label">Level Two</label>
+	<div class="videogallery" >
+	<a id="tutorial_2" class="voverlay" >
+	<img id="tutorial_2_image"  /><span></span></a>
+	<!-- <p><span class="videolb"><a href="http://videolightbox.com">video embed code</a> by VideoLightBox.com v3.1</span></p> -->
+	</div>
+<!--  	<script src="tutorial/tutorial_2/index_videolb/jquery.tools.min.js" type="text/javascript"></script>
+	<script src="tutorial/tutorial_2/index_videolb/videolightbox.js" type="text/javascript"></script>  -->
+	<!-- End VideoLightBox.com BODY section -->
+	</div>
+	</div>
+</div>
+</body>
+</html>

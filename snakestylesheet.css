@@ -1,0 +1,675 @@
+body {
+	margin: 0 ;
+	background-color: #028E9B;
+	/* color: /#028E9B; */
+	color: #000000;
+	font-family: verdana, sans-serif;
+}
+
+/* modified from http://jsfiddle.net/bHWcu/1/ */
+#player:valid {
+    color: darkgreen;
+}
+#player:invalid {
+    color: darkred;
+}
+
+#Canvas1{
+	width: 900px;
+	margin-top: 15px;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-radius: 20px;
+	box-shadow: 0px 10px 20px #000000;
+	padding: 25px;
+}
+
+#Canvas2{
+	width: 175px;
+	margin-left:40px;
+	margin-right:46px;
+	margin-top: 15px;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0px 10px 20px #000000;
+	padding: 20px;
+}
+
+.tutorial {
+    /* padding: 15px 32px; */
+	top:50px;
+	left:450px;
+	/* visibility:hidden; */
+}
+
+.buttonLang {
+    background-color: darkslategrey;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 20px;
+	top:0px;
+	left: 0px;
+}
+
+.main {
+	visibility:hidden;
+    color: black;
+	width:500px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 50px;
+	font-weight:bold;
+	position:absolute; 
+	top:180px; 
+	left:485px;
+}
+
+.DNA_r {
+	visibility:hidden;
+    color: black;
+	width:650px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 50px;
+	font-weight:bold;
+	position:absolute; 
+	top:200px; 
+	left:315px;
+}
+
+.protein_s {
+	visibility:hidden;
+    color: black;
+	width:700px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 50px;
+	font-weight:bold;
+	position:absolute; 
+	top:200px; 
+	left:285px;
+}
+
+.over {
+	visibility:hidden;
+    color: black;
+	width:500px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 55px;
+	font-weight:bold;
+	position:absolute; 
+	top:225px; 
+	left:395px;
+}
+
+.lvl_one {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:300px; 
+	left:530px;
+}
+
+.lvl_two {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:475px; 
+	left:530px;
+}
+
+.over_leader {
+	visibility:hidden;
+    color: black;
+	width:700px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:305px; 
+	left:285px;
+}
+
+.start_p {
+	visibility:hidden;
+    color: black;
+	width:450px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 44px;
+	font-weight:bold;
+	position:absolute; 
+	top:275px; 
+	left:420px;
+}
+
+.take_t {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 44px;
+	font-weight:bold;
+	position:absolute; 
+	top:390px; 
+	left:440px;
+}
+
+.take_t_over {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:440px; 
+	left:440px;
+}
+
+.start_p_over {
+	visibility:hidden;
+    color: black;
+	width:450px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:325px; 
+	left:420px;
+}
+
+.how_play {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 44px;
+	font-weight:bold;
+	position:absolute; 
+	top:500px; 
+	left:440px;
+}
+
+.press_s {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	position:absolute; 
+	top:325px; 
+	left:440px;
+}
+
+.press_t {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	position:absolute; 
+	top:440px; 
+	left:440px;
+}
+
+.press_s_over {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	position:absolute; 
+	top:375px; 
+	left:440px;
+}
+
+.press_t_over {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	position:absolute; 
+	top:490px; 
+	left:440px;
+}
+
+.press_h {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	position:absolute; 
+	top:550px; 
+	left:440px;
+}
+
+.enter3 {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 26px;
+	position:absolute; 
+	top:410px; 
+	left:440px;
+}
+
+.press_e {
+	visibility:hidden;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 26px;
+	position:absolute; 
+	top:450px; 
+	left:440px;
+}
+
+.buttonReplication {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 30px;
+	position:absolute; 
+	top:360px; 
+	left:570px;
+}
+.buttonReplication:hover{
+     background: darkslategrey;
+}
+
+.buttonSynthesis {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:400px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 30px;
+	position:absolute; 
+	top:535px; 
+	left:570px;
+}
+.buttonSynthesis:hover{
+     background: darkslategrey;
+}
+
+.buttonmenu {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 24px;
+	position:absolute; 
+	top:170px; 
+	left:327px;
+}
+.buttonmenu:hover{
+     background: darkslategrey;
+}
+
+.clear {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:150px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	position:absolute; 
+	top:170px; 
+	left:1075px;
+}
+.clear:hover{
+     background: darkslategrey;
+}
+
+.skip {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:150px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	position:absolute; 
+	top:550px; 
+	left:690px;
+}
+.skip:hover{
+     background: darkslategrey;
+}
+
+.speedminus {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:30px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	position:absolute; 
+	top:170px; 
+	left:870px;
+}
+.speedminus:hover{
+     background: darkslategrey;
+}
+
+.speedplus {
+	visibility:hidden;
+    background-color: teal;
+    color: black;
+	width:30px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	position:absolute; 
+	top:170px; 
+	left:995px;
+}
+.speedplus:hover{
+     background: darkslategrey;
+}
+
+.speed {
+	visibility:hidden;
+    border: none;
+    color: black;
+	background: none;
+	width:90px;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 18px;
+	font-weight: bold;
+	position:absolute; 
+	top:172px; 
+	left:898px;
+}
+
+/* Idea from http://stackoverflow.com/questions/446060/css-two-divs-next-to-each-other */
+#parent {
+  display: flex;
+}
+
+.how_to {
+	visibility:hidden;
+    color: black;
+	width:500px;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 40px;
+	font-weight:bold;
+	position:absolute; 
+	top:170px; 
+	left:490px;
+}
+
+.para_1 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:210px; 
+	left:315px;
+	width:665px;
+}
+
+.para_2 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:400px; 
+	left:315px;
+	width:665px;
+}
+
+.para_3 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:525px; 
+	left:315px;
+	width:845px;
+}
+
+.para_4 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:340px; 
+	left:315px;
+	width:665px;
+}
+
+.para_5 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:205px; 
+	left:315px;
+	width:665px;
+}
+
+.para_6 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:350px; 
+	left:315px;
+	width:665px;
+}
+
+.para_7 {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	text-align:justify;
+	position:absolute; 
+	top:460px; 
+	left:315px;
+	width:656px;
+}
+
+.score {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:135px; 
+	left:290px;
+}
+
+.start {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:167px; 
+	left:910px;
+}
+
+.collect {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:310px; 
+	left:930px;
+}
+
+.next {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:585px; 
+	left:990px;
+}
+
+.a_collect {
+	visibility:hidden;
+    padding: 10px 40px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:145px; 
+	left:940px;
+	width:100px;
+}
+
+.reminder {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:370px;
+}
+
+.A {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:530px;
+}
+
+.bond {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:595px; 
+	left:550px;
+}
+
+.T {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:620px;
+}
+
+.U {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:620px;
+}
+
+.C {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:695px;
+}
+
+.triple {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:595px; 
+	left:720px;
+}
+
+.G {
+	visibility:hidden;
+    padding: 10px 40px;
+	padding-bottom: 10px;
+    font-size: 20px;
+	font-weight:bold;
+	position:absolute; 
+	top:640px; 
+	left:790px;
+}
+
+.playerText {
+	visibility:hidden;
+	z-index:101; 
+	position:absolute; 
+	top:510px; 
+	left:600px; 
+	background-color:transparent; 
+	height:50px; 
+	width:130px;
+	text-transform: uppercase;
+    border-style: dashed;  
+    border-width: 4px 4px 4px 4px;  
+    border-color: black;
+	font-size: 50px;
+	font-style: bold;
+}
