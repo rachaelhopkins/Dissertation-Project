@@ -5,8 +5,8 @@
 	background-image:url(back.png);
 	
 	/* dimensions after the growing animation finishes  */
-	width:480px;
-	height:360px;
+	width:864px;
+	height:480px;
 	
 	/* initially overlay is hidden */
 	display:none;
