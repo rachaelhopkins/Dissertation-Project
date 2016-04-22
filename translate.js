@@ -53,6 +53,14 @@ var translate = {
 	"play_vid": "How to Play",
 	"play_1": "Level One",
 	"play_2": "Level Two",
+	"how_to": "Learn More",
+	"para_1": "The human body is constantly duplicating cells, to do this it must take information from the original cell. This information is the <b>DNA of the cell</b>, since DNA has two strands, the new cell takes one of those strands. It then uses the <b>bases</b> of the DNA to create the second strand.",
+	"para_2": "These bases are <b>A, T, C and G</b>. It is important to remember that <b>A and T</b> go together, as do <b>G and C</b>. A and T have a double bond where C and G have a triple bond.",
+	"para_3": "Using the <b>arrow keys</b>  you must collect the correct base on the left which corresponds to the one on the right, starting from the top. Collecting the correct one will win you 5 points, the wrong one will lose you 5.",
+	"para_4": "When these bases are collected in the <b>correct order</b> the DNA becomes double stranded and the new cell is formed.",
+	"para_5": "Level Two is based on a process called <b>Central Dogma</b>, this is how Proteins are made. The first part of this process is <b>Transcription</b>, this turns <b>DNA into RNA</b>. RNA uses the same bases as DNA except <b>T turns into U</b>.",
+	"para_6": "The next part is <b>Translation</b>, the RNA is passed through a <b>Ribosome</b> three bases at a time. It reads the three bases and matches them with the corresponding bases. When the entire RNA is matched, the <b>Protein is created</b>.",
+	"para_7": "Using the arrow keys, <b>collect the correct 3 bases</b> which match the RNA going through the Ribosome.	In the practice the correct bases will light up and the incorrect ones will be black. In the test all bases will be black and <b>you must work out</b> which is correct.",
 	"": ""
     },
     "Cymraeg": {
@@ -91,6 +99,14 @@ var translate = {
 	"play_vid": "Sut i Chwarae",
 	"play_1": "Lefel Un",
 	"play_2": "Lefel Dau",
+	"how_to": "Dysgu Mwy",
+	"para_1": "Mae'r corff dynol yn gyson dyblygu celloedd, i wneud hyn rhaid iddo gymryd gwybodaeth o'r gell gwreiddiol. Mae'r wybodaeth hon yn y <b>DNA y gell</b>, gan fod gan DNA dwy elfen, y gell newydd yn cymryd un o'r meysydd hynny. Yna mae'n defnyddio'r <b>canolfannau</b> y DNA i greu'r ail linyn.",
+	"para_2": "Mae'r canolfannau yn <b>A, T, C a G</b>. Mae'n bwysig cofio bod <b>A a T</b> yn mynd gyda'i gilydd, fel y mae <b>G a C</b>. A a T yn cael bond dwbl lle C a G yn cael bond triphlyg.",
+	"para_3": "Gan ddefnyddio'r <b>bysellau saeth</b> rhaid i chi gasglu'r sylfaen cywir ar y chwith sy'n cyfateb i'r un ar y dde, gan ddechrau o'r brig. Casglu bydd yr un cywir yn ennill chi 5 pwynt, bydd yr un anghywir yn colli chi 5.",
+	"para_4": "Pan fydd canolfannau hyn yn cael eu casglu yn y <b>drefn gywir</b> y DNA yn dod yn sownd dwbl a'r gell newydd yn cael ei ffurfio.",
+	"para_5": "Lefel Dau yn seiliedig ar broses o'r enw <b>Central Dogma</b>, dyma sut Proteinau yn cael eu gwneud. Mae rhan gyntaf y broses hon yw <b>Trawsgrifio</b>, mae hyn yn troi <b>DNA i mewn RNA</b>. RNA yn defnyddio'r un seiliau ag DNA heblaw <b>T troi i mewn i U</b>.",
+	"para_6": "Y rhan nesaf yw <b>Cyfieithu</b>, mae'r RNA ei basio drwy <b>Ribosome</b> dair canolfan ar y tro. Mae'n darllen y tair canolfan ac yn eu cyfateb gyda'r canolfannau cyfatebol. Pan fydd y RNA cyfan yn cyfateb, y <b>Protein yn cael ei greu</b>.",
+	"para_7": "Gan ddefnyddio'r bysellau saeth, <b>casglu'r 3 canolfannau cywir</b> sy'n cyfateb i'r RNA mynd drwy'r Ribosome. Yn yr arfer, bydd y canolfannau cywir oleuo a bydd y rhai anghywir fod yn ddu. Yn y prawf bydd yr holl ganolfannau fod yn ddu a <b>rhaid i chi weithio allan</b> sy'n gywir.",
 	"": ""
     }
 };
@@ -131,4 +147,12 @@ function setLanguageStrings() {
 	document.getElementById("play_vid").innerHTML  = (translate[lang]["play_vid"]);
 	document.getElementById("play_1").innerHTML  = (translate[lang]["play_1"]);
 	document.getElementById("play_2").innerHTML  = (translate[lang]["play_2"]);
+	document.getElementById("how_to").innerHTML  = (translate[lang]["how_to"]);
+	document.getElementById("para_1").innerHTML  = (translate[lang]["para_1"]);
+	document.getElementById("para_2").innerHTML  = (translate[lang]["para_2"]);
+	document.getElementById("para_3").innerHTML  = (translate[lang]["para_3"]);
+	document.getElementById("para_4").innerHTML  = (translate[lang]["para_4"]);
+	document.getElementById("para_5").innerHTML  = (translate[lang]["para_5"]);
+	document.getElementById("para_6").innerHTML  = (translate[lang]["para_6"]);
+	document.getElementById("para_7").innerHTML  = (translate[lang]["para_7"]);
 }

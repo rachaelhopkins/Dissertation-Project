@@ -4,7 +4,7 @@ window.onload = function() {
     var ctx = mycanv.getContext("2d");
     var snake_array = new Array(4);
     var protein_array = new Array("head", "A2", "A2");
-	var single_array;
+	var single_array = new Array(0);
     var double_array = new Array(0);
     var collected_array = new Array(0);
     var ribosome_array = new Array("C", "G", "A", "G", "U", "U", "C", "A", "G", "U", "C", "A", "U", "G", "A", "C", "C", "U", "A", "U", "G", "C", "G", "C");
@@ -28,6 +28,8 @@ window.onload = function() {
     var codon = false;
     var start_loop;
     var end_loop;
+	var success_sound = new Audio("audio/success.mp3");
+	var fail_sound = new Audio("audio/fail.mp3");
     var img_A = new Image(),
         img_G = new Image(),
         img_C = new Image(),
@@ -342,34 +344,6 @@ window.onload = function() {
         } 
     }
 
-	// function show_tutorial_1() {
-		// var tutorial = document.getElementById("tutorial_1");
-		// tutorial.style.visibility = "visible";
-		// tutorial.src = "tutorial/Tutorial_1_finished.mp4";
-        // document.getElementById("m_menu").style.visibility = "visible";
-		// document.getElementById("skip").style.visibility = "visible";
-		// hide_how_to();
-        // hide_game_over();
-        // hide_menus();
-        // hide_start();
-		// menu_type = "second";
-		// menu = "replication";
-	// }
-	
-	// function show_tutorial_2() {
-		// var tutorial = document.getElementById("tutorial_2");
-		// tutorial.style.visibility = "visible";
-		// tutorial.src = "tutorial/Tutorial_2_finished.mp4";
-        // document.getElementById("m_menu").style.visibility = "visible";
-		// document.getElementById("skip").style.visibility = "visible";
-		// hide_how_to();
-        // hide_game_over();
-        // hide_menus();
-        // hide_start();
-		// menu_type = "second";
-		// menu = "synthesis";
-	// }
-	
     //Takes user to the appropriate level depending where in the game they are
     function change_menu() {
         if (menu_type == "second") {
@@ -385,32 +359,32 @@ window.onload = function() {
 
     function change_speed_minus() {
         if (document.getElementById("speed").innerHTML == "Fast") {
-            speed = 100;
+            speed = 200;
             document.getElementById("speed").innerHTML = "Average";
         } else if (document.getElementById("speed").innerHTML == "Average") {
-            speed = 150;
+            speed = 300;
             document.getElementById("speed").innerHTML = "Slow";
         } else if (document.getElementById("speed").innerHTML == "Cyflym") {
-            speed = 100;
+            speed = 200;
             document.getElementById("speed").innerHTML = "Cyfartalog";
         } else if (document.getElementById("speed").innerHTML == "Cyfartalog") {
-            speed = 150;
+            speed = 300;
             document.getElementById("speed").innerHTML = "Araf";
         }
     }
 
     function change_speed_plus() {
         if (document.getElementById("speed").innerHTML == "Slow") {
-            speed = 100;
+            speed = 200;
             document.getElementById("speed").innerHTML = "Average";
         } else if (document.getElementById("speed").innerHTML == "Average") {
-            speed = 75;
+            speed = 90;
             document.getElementById("speed").innerHTML = "Fast";
         } else if (document.getElementById("speed").innerHTML == "Araf") {
-            speed = 100;
+            speed = 200;
             document.getElementById("speed").innerHTML = "Cyfartalog";
         } else if (document.getElementById("speed").innerHTML == "Cyfartalog") {
-            speed = 75;
+            speed = 90;
             document.getElementById("speed").innerHTML = "Cyflym";
         }
     }
@@ -419,9 +393,9 @@ window.onload = function() {
         if (document.getElementById("speed").innerHTML == "Slow" || document.getElementById("speed").innerHTML == "Araf") {
             speed = 300;
         } else if (document.getElementById("speed").innerHTML == "Average" || document.getElementById("speed").innerHTML == "Cyfartalog") {
-            speed = 100;
+            speed = 200;
         } else if (document.getElementById("speed").innerHTML == "Fast" || document.getElementById("speed").innerHTML == "Cyflym") {
-            speed = 75;
+            speed = 90;
         }
     }
 
@@ -467,7 +441,6 @@ window.onload = function() {
                 if (menu == "replication") {
                     shift_scores();
                     document.getElementById('player').value = "";
-                    //leader_board();
                     replication_menu();
                 } else if (menu == "synthesis") {
                     shift_scores_synthesis();
@@ -481,7 +454,7 @@ window.onload = function() {
         } else if (e.keyCode == 50 && entering_name == false && start == true) { //2
             synthesis_menu();
         }
-        if (e.keyCode == 76 && entering_name == false && active == false && menu != "main") { //h
+        if (e.keyCode == 76 && entering_name == false && active == false && menu != "main" && menu_type == "first") { //L
             if (menu == "replication") {
                 how_to_replication();
             } else {
@@ -604,6 +577,7 @@ window.onload = function() {
                     if (map[snake_array[0].x][snake_array[0].y] === 2) {
                         protein_array.splice(1, 0, "A2");
                         collected_array.push("A_not_collected");
+						fail_sound.play();
                         codon = false;
                         score = score - 5;
                         counter = counter + 1;
@@ -611,30 +585,35 @@ window.onload = function() {
                     } else if (map[snake_array[0].x][snake_array[0].y] === 3) {
                         protein_array.splice(1, 0, "G2");
                         collected_array.push("G_not_collected");
+						fail_sound.play();
                         codon = false;
                         score = score - 5;
                         counter = counter + 1;
                     } else if (map[snake_array[0].x][snake_array[0].y] === 4) {
                         protein_array.splice(1, 0, "U2");
                         collected_array.push("U_not_collected");
+						fail_sound.play();
                         codon = false;
                         score = score - 5;
                         counter = counter + 1;
                     } else if (map[snake_array[0].x][snake_array[0].y] === 5) {
                         protein_array.splice(1, 0, "C2");
                         collected_array.push("C_not_collected");
+						fail_sound.play();
                         codon = false;
                         score = score - 5;
                         counter = counter + 1;
                     } else if (map[snake_array[0].x][snake_array[0].y] === 22) {
                         protein_array.splice(1, 0, "A");
                         collected_array.push("A_collected");
+						success_sound.play();
                         codon = true;
                         score = score + 5;
                         counter = counter + 1;
                     } else if (map[snake_array[0].x][snake_array[0].y] === 33) {
                         protein_array.splice(1, 0, "G");
                         collected_array.push("G_collected");
+						success_sound.play();
                         codon = true;
                         score = score + 5;
                         counter = counter + 1;
@@ -642,6 +621,7 @@ window.onload = function() {
                     } else if (map[snake_array[0].x][snake_array[0].y] === 44) {
                         protein_array.splice(1, 0, "U");
                         collected_array.push("U_collected");
+						success_sound.play();
                         codon = true;
                         score = score + 5;
                         counter = counter + 1;
@@ -649,6 +629,7 @@ window.onload = function() {
                     } else if (map[snake_array[0].x][snake_array[0].y] === 55) {
                         protein_array.splice(1, 0, "C");
                         collected_array.push("C_collected");
+						success_sound.play();
                         codon = true;
                         score = score + 5;
                         counter = counter + 1;
@@ -669,6 +650,7 @@ window.onload = function() {
                         collected_array = new Array(0);
                         new_protein = 0;
                     }
+                map[snake_array[0].x][snake_array[0].y] = 1;
                     correct_letter();
                     draw_letters_synthesis(map);
                 }
@@ -782,7 +764,6 @@ window.onload = function() {
         ctx.font = "bold 24px sans-serif";
         ctx.fillText(score + " ", 90, 17);
         for (var i = snake_array.length - 1; i >= 0; i--) {
-
             if (i === 0) {
                 switch (direction) {
                     case 0:
@@ -833,9 +814,11 @@ window.onload = function() {
                         if (double_array[new_protein] != "A") {
                             protein_array.splice(1, 0, "A2");
                             collected_array.push("A_not_collected");
+							fail_sound.play();
                         } else {
                             protein_array.splice(1, 0, "A");
                             collected_array.push("A_collected");
+							success_sound.play();
                         }
                         if (protein == 0) {
                             score = score + 5;
@@ -848,9 +831,11 @@ window.onload = function() {
                         if (double_array[new_protein] != "G") {
                             protein_array.splice(1, 0, "G2");
                             collected_array.push("G_not_collected");
+							fail_sound.play();
                         } else {
                             protein_array.splice(1, 0, "G");
                             collected_array.push("G_collected");
+							success_sound.play();
                         }
                         if (protein == 1) {
                             score = score + 5;
@@ -863,9 +848,11 @@ window.onload = function() {
                         if (double_array[new_protein] != "T") {
                             protein_array.splice(1, 0, "T2");
                             collected_array.push("T_not_collected");
+							fail_sound.play();
                         } else {
                             protein_array.splice(1, 0, "T");
                             collected_array.push("T_collected");
+							success_sound.play();
                         }
                         if (protein == 2) {
                             score = score + 5;
@@ -878,9 +865,11 @@ window.onload = function() {
                         if (double_array[new_protein] != "C") {
                             protein_array.splice(1, 0, "C2");
                             collected_array.push("C_not_collected");
+							fail_sound.play();
                         } else {
                             protein_array.splice(1, 0, "C");
                             collected_array.push("C_collected");
+							success_sound.play();
                         }
                         if (protein == 3) {
                             score = score + 5;
@@ -901,6 +890,7 @@ window.onload = function() {
                             }
                         }
                     }
+                map[snake_array[0].x][snake_array[0].y] = 1;
                     new_protein = new_protein + 1;
                     correct_letter();
                     draw_letters(map);
@@ -966,7 +956,7 @@ window.onload = function() {
         }
         if (active) {
             if (speed > 50) {
-                speed = speed - 0.05;
+                speed = speed - 0.08;
             }
             setTimeout(game_loop, (speed));
         }
@@ -1096,8 +1086,8 @@ window.onload = function() {
         ctx.drawImage(snake_T, 250, 190, 25, 25);
         ctx.drawImage(snake_U, 390, 190, 25, 25);
         ctx.drawImage(arrow, 300, 186, 75, 30);
-        ctx.drawImage(three_colour, 300, 456, 75, 25);
-        ctx.drawImage(three_black, 450, 456, 75, 25);
+        ctx.drawImage(three_colour, 300, 465, 75, 25);
+        ctx.drawImage(three_black, 450, 465, 75, 25);
         ctx.drawImage(ribosome_letters, 730, 70, mycanv.width - 750, 385);
         ctx.drawImage(arrow2, 680, 216, 65, 40);
         ctx.drawImage(arrow2, 760, 45, 65, 40);
@@ -1515,14 +1505,27 @@ window.onload = function() {
 		} else if (helix == 2){
 			single_array = new Array("G", "C", "C", "A", "G", "G", "T", "G", "T", "T", "C", "T", "G", "A", "C", "T", "C", "C", "C", "A", "G", "C", "G", "T");
         } else if (helix == 3){
-			single_array = new Array("C", "G", "A", "G", "A", "T", "C", "A", "T", "G", "C", "T", "A", "C", "T", "G", "C", "A", "G", "T", "C", "T", "A", "G", "C", "C", "T", "G");
+			single_array = new Array("C", "G", "A", "G", "A", "T", "C", "A", "T", "G", "C", "T", "A", "C", "T", "G", "C", "A", "G", "T", "C", "T", "A", "G");
 		} else if (helix == 4){	
-			single_array = new Array("T", "T", "G", "C", "T", "G", "A", "T", "A", "G", "G", "T", "G", "G", "C", "C", "A", "T", "C", "T", "C", "T", "G", "G", "A", "A", "C", "T", "G", "T", "G", "G", "A");
+			single_array = new Array("T", "T", "G", "C", "T", "G", "A", "T", "A", "G", "G", "T", "G", "G", "C", "C", "A", "T", "C", "T", "C", "T", "G", "G");
 		} else if (helix == 5){
-			single_array = new Array("A", "T", "A", "G", "C", "C", "A", "G", "T", "A", "G", "T", "A", "T", "T", "C", "G", "A", "T", "G", "T", "A", "T", "G", "A", "G");
+			single_array = new Array("A", "T", "A", "G", "C", "C", "A", "G", "T", "A", "G", "T", "A", "T", "T", "C", "G", "A", "T", "G", "T", "A", "T", "G");
 		} else if (helix == 6){
-			single_array = new Array("A", "T", "T", "C", "A", "G", "C", "A", "G", "T", "G", "C", "T", "G", "T", "C", "T", "G", "G", "C", "A", "T", "T", "C", "T", "C", "T");
+			single_array = new Array("A", "T", "T", "C", "A", "G", "C", "A", "G", "T", "G", "C", "T", "G", "T", "C", "T", "G", "G", "C", "A", "T", "T", "C");
 	    }
+		
+		for (var j = 0; j < 58; j++){
+			 helix = Math.floor(Math.random() * 4) + 1;
+			 if (helix == 1){
+				 single_array.push("A");
+			} else if (helix == 2){
+				single_array.push("T");
+			} else if (helix == 3){
+				single_array.push("C");
+			} else if (helix == 4){	
+				single_array.push("G");
+			 }
+		}
 		double_array = new Array();
 		for (var i = 0; i < single_array.length; i++) {
             if (single_array[i] == "C") {
@@ -1545,9 +1548,10 @@ window.onload = function() {
         }
 
         // if (collected_array[23] != undefined) {
-        // collected_array = new Array(0);
-        // start_loop = 0;
-        // end_loop = 12;
+			// collected_array = new Array(0);
+			// start_loop = 0;
+			// end_loop = 12;
+			// new_protein = 0;
         // }
         var y = 25;
         for (var j = start_loop; j < double_array.length - end_loop; j++) {
@@ -1749,7 +1753,7 @@ window.onload = function() {
         img_T.src = "images/T8.png";
         img_G.src = "images/G8.png";
         img_C.src = "images/C8.png";
-        if (menu == "replication") {
+       // if (menu == "replication") {
             if (test_level == true) {
                 if (double_array[new_protein] == "A") {
                     protein = 0;
@@ -1787,7 +1791,7 @@ window.onload = function() {
                     protein = 3;
                 }
             }
-        }
+      //  }
     }
 
     //The functions below hide text depending on where in the game the user is

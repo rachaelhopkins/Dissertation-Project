@@ -534,7 +534,7 @@ body {
     font-size: 20px;
 	font-weight:bold;
 	position:absolute; 
-	top:167px; 
+	top:150px; 
 	left:910px;
 }
 
@@ -555,7 +555,7 @@ body {
 	font-weight:bold;
 	position:absolute; 
 	top:585px; 
-	left:990px;
+	left:980px;
 }
 
 .a_collect {
@@ -564,7 +564,7 @@ body {
     font-size: 20px;
 	font-weight:bold;
 	position:absolute; 
-	top:145px; 
+	top:140px; 
 	left:940px;
 	width:100px;
 }
